@@ -10,4 +10,8 @@ era so colocar o FF para retornar seu valor do menos significativo. Já na segun
    de conjunção com 1, pois somente se o bit for 1, a operação retornará 1. Caso isso aconteça, a variável n
    operará com o número 1 através do "ou exclusivo", alternando assim o n de 0 para 1, 1 para 0, 0 para 1...
 
-3
+3) a) Nessa questao eu peguei e usei um '|' para duas condições, sendo elas x<<4 (acrescentava 4 zeros a direita) e x>>4 (acres-
+centava 4 zeros a esquerda). Pois ao usar o 'or' qualquer valor de zero com um valor 1 sempre sairá 1.
+
+b) Nessa segunda questão eu so tive que mudar a diferenca ao usar um x<<n e um x>>8-n, pois como estamos limitados a 8 bits e 
+para que correspondesse com pedido, enquanto um lado tinha n o outro teria 8-n de shift para que entrasse de volta.
