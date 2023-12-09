@@ -1,0 +1,29 @@
+jedean jehayem (1813196)
+
+1) a) podemos ver na saída do programa o endereço onde está armazenado e o valor em hexadecimal de 10000, que no caso
+é um int, ou seja, possuindo 4 linhas de codigo  (4 bytes) sendo elas 10 27 00 00, está saindo nesse modo pois está em little
+indian. O valor real do hexadecimal seria 00 00 27 10, mas em little indian se faz do menos significativo pro mais.
+
+b) No caso do long, vemos o mesmo hexadecimal so que com mais zeros pois está com 8 bytes agora ( 10 27 00 00 00 00 00 00).
+
+c) No caso do short, vemos ele com apenas 2 bytes ( 10 27 ).
+
+d) Ao atribuir 'a' e 97 temos a mesma saída de 61, pois ambos tem o mesmo valor hexadecima e a mesma quantitdade de bytes já
+que são char e botaram seus respectivos valores.
+
+e) Ao fazermos com p[], achamos 37 35 30 39 00. Podemos ver que a dump entregou o valor correspondente em hexadecimal de cada
+numero e manteve o little indian. E ao testarmos os outros carcteres pedidos achamos seus valores em hex na tabela ASCII.
+
+2) A função string2num recebe uma string numérica e retorna a sua representação em forma de int. 
+A cada iteração do for, o inteiro a é multiplicado por 10 para "subir a casa decimal" (ir colocando o algarismo 
+mais à esquerda) e depois somar com (*s - '0'). Essa subtração é feita para converter um caracter numerico para seu equivalente em inteiro, 
+pois estaremos subtraindo seu valor na tabela ASCII com o valor de 0 na tabela ASCII. A função string2num 
+repete a iteração n vezes, n é o número de caracteres na cadeia, indo do caracter mais à esquerda para o mais à 
+direita.
+
+b) para mudar a base é so trocar o '10' que multiplica a variavel por n (numero da base que deseja trocar).
+
+c) Se o n for maior que 10 deve-se somar a variavel a, que está multiplicada pela base, ao correspondente numérico
+da letra (a-z), que é obtido subtraindo o caracter da letra por 'a' e somando 10 (0-9) para obter o código correspondente
+ao que queremos na tabela ASCII, e assim a soma é realizada corretamente. Já que o maior dígito possivel é 35, logo teremos
+base 36 como a maior possivel.
