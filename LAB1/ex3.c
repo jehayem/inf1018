@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-float foo (float pf);
-
 int main (int argc, char **argv) {
   float f;
   if (argc!=2) {
