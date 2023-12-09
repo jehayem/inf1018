@@ -1,1 +1,20 @@
+RELATÓRIO LABORATÓRIO 1 - jedean jehayem (1813196)
+
+4a. Como foi digitado ./ex1 4.0, argc foi igual a 2 e o printf com a funcao foo foi chamado. O programa ex1 não foi encontrado porque ele não está no caminho dos executáveis do computador(falta do".\" para achar o endereco do executavel), ou seja, seu diretório não foi encontrado. 
+
+4b. Ao trasformar os dois arquivos c em arquivos objeto, executando o ligador e testando o ex2 por meio de .\ex2 encontramos o mesmo valor do teste .\ex1 4.0
+
+4c. Executando ex3, a main funciona corretamente, porém o valor retornado pela função foo, agora declarada
+implicitamente, foi 0.00. Isso se deve ao fato de não conseguir se linkar a função foo que se encontra em labaux corretamente.
+
+5. Os argumentos passados pela função dump são, respectivamente, endereço de uma variável de um tipo qualquer e 
+o tamanho em bytes dessa variável. A função irá printar o valor da variável p na memória, no caso armazenado 
+na variável p1 do tipo unsigned char. O print irá acontecer em um número n de vezes igual ao número de bytes 
+que a variável ocupa na memória. 
+
+temos entao:
+1 -> temos 1 byte de tamanho e armazena 1
+'1' -> temos 1 byte e 49 que é o codigo de '1' na tabela ASCIII
+int 1 -> temos 4 bytes já que se trata de um inteiro, e temos 1000 devido a little indian
+v[]='1' -> temos 2 bytes, pois teriamos '' e '1' como integrantes do vetor, mas como é '1' temos 49 0 pois denovo se encontra em little indian
 
