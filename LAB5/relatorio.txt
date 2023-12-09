@@ -1,1 +1,39 @@
+jedean jehayem 1813196
 
+1) 
+1º o seu valor é 8 pois temos 2 itens na array com valor de 4 bytes cada.
+2ª o seu valor é 12 pois temos uma array 2 de double (2 bytes) que possui 3 double em cada um desse double (6 bytes). logo são 12.
+
+2)
+A estrutura tem 12 bytes pois temos
+
+a a a a b b X X c c c c
+
+O buraco se deve a um padding de 2 bytes que é feito para poder alinhar a estrutura da struct.
+
+3)
+a)
+c X X X i i i i c X X X 
+
+b)
+L L L L L L L L C X X X X X X X 
+
+c)
+i i i i c1 c2 X X
+
+d) 
+X2 X2 X2 X2 X2 X2 X2 X2 X2 X2 X2 X2 X2 X2 X2 X2 c X X X X X X X 
+
+e)
+c1 c2 2
+
+f) 
+s1 s1 X X i i i i c c c X s2 s2 X X
+
+g)
+int - i i i i ? ? X X
+char[5] - c c c c c ? X X
+
+h)
+short - s s ? X X X
+char[5] - c c c c c X 
