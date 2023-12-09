@@ -1,1 +1,13 @@
+jedean jehayem (1813196)
 
+1) Na primeira usei 0x000000FF & x, pois nessa qualquer valor da zero se nao for 1 com 1 e como queremos apenas os dois ultimos
+era so colocar o FF para retornar seu valor do menos significativo. Já na segunda usei 0xFF000000 | x, pois os valor daria sempre eles mesmo quando 0 e assim quando fosse FF retornaria o valor de FF que é o bit mais significativo.
+
+
+2) Inicializei a variável n em 0 (antes da operação, há 0 '1´s'). O for vai iterar sobre os bits do inteiro 
+   sem sinal, começando do bit menos signifativo, e os bits vão "andando" para a direita (através do x=x>>1),
+   até que a representação em binário esteja completamente zerada. A cada iteração, será a realizada a operação
+   de conjunção com 1, pois somente se o bit for 1, a operação retornará 1. Caso isso aconteça, a variável n
+   operará com o número 1 através do "ou exclusivo", alternando assim o n de 0 para 1, 1 para 0, 0 para 1...
+
+3
