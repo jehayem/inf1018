@@ -1,1 +1,32 @@
+jedean jehayem (1813196)
 
+1) 
+
+char c = 150 -> temos um byte por ser char, 150 em binario é 1001 0110 e ao transformar ele em hexa temos 96.
+short s = -3 -> temos 2 bytes por ser um short, fazemos por complemento a 2. -3 -> 3 -> 0011 -> 1100 +1 -> 1101. Como temos
+dois bytes logo ficaremos com ff fd, como é em little indian se torna fd ff
+int i = -151 -> temos 4 bytes por ser um int, fazemos por complemento a 2. -151-> 151 -> 1001 0111 -> 0110 1000 +1 -> 0110 1001.
+Como temos 4 bytes, logo ficaremos com ff ff ff 69, vira 69 ff ff ff.
+
+2) 
+
+short l = -32765 -> temos um byte por ser short, por complemente a 2. -32765 -> 32765 -> 0111 1111 1111 1101 ->
+1000 0000 0000 0010 +1 -> 1000 0000 0000 0011. como temos 2 bytes, ficara 80 03.
+unsigned short k = 32771 -> temos 2 bytes por ser um short. Por ser um unsigned 32771 -> 1000 0000 0000 0011
+
+3) 
+O que a minha função xbyte faz é simplesmente pegar o valor hexadecimal, que foi convertido em decimal através
+da função string2num, e, dependendo do byte desejado, faço um shift para esquerda determinado número de vezes
+(quando é o byte 2 eu desloco 8 bits por exemplo) e depois dou um shift para o byte ficar mais à direita possível. 
+Esse resultado acaba gerando um inteiro correspondente ao byte indicado.
+
+4)
+No primeiro programa x e y sao do tipo int. Ao fazer x pelo complemento a 2 temos que seu valor como int é -1 que certamente é menor que 2.
+
+No segundo programa x e y sao unsigned int, ou seja, sao inteiros sem sinal. Ao printarmos o programa usando %d vemos os seus valores como inteiros, mas nao é o valor real interno que no caso de x é maior que o de 2 ( cujo valor continua 2 
+se trocarmos o %d por %u enquanto x fica um numero muito grande).
+
+No terceiro programa vemos que a representacao em bits de cada um é mais importante, no caso de x iria ser 1111 1111 1111 1111 1111 1111 1111 1111 e do y é 0000 0000 0000 0000 0000 0000 0000 0010. Realmente x é maior que y.
+
+5)
+Ao se colocar um signed char de um byte no valor de -1, temos ele como ff e colocando num unsigend int que possui 4 bytes o seu valor se completa com ff pra esquerda, sendo o final ff ff ff ff.
