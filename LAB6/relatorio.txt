@@ -1,3 +1,11 @@
 1) Ao vermos o codigo em assembly podemos perceber que ele inicia os valores de data de nums e define o formato de printf. Logo depois se inicia a main no .text, ali ele move o valor de ebx = 0 (esse seria o i da funcao em c) e inicia movq $nums,r%12 (pegando o endereco de nums e colocando num registrador). Ao passar disso ele inicia o for com "L1:" e usa o comparador cmpl $4, %ebx ( i!=4 ) e usa o je L2 para sair do for caso a condicao seja atingida. Logo depois ele determina (%r12),%eax (*p = eax) e assim usa addl para icrementar de 1 ao valor de i para rodar o for e acrescenta 4 no %r12 pois o valor de um num é 4 bytes, ou seja, acrescentar para que possa pegar o proximo na proxima chamada.
 
-2)
+2) Eu iniciei %ecx com $0 para fazer o sum = 0, depois coloquei que addl (%r12),%ecx e em l2 coloque movl %ecx,%eax substituindo a ordem da onde estava o print tambem.
+
+3) Para modificar o programa, no label 1 antes de printar o valor, conferi se ele era impar através da operação lógica
+de conjunção com 0x00000001 (primeiro passei o conteudo de %r12 para %edx). Se fosse impar, pulei o código para o label L2
+que somava +1 a "i" e +4 ao endereço do "ponteiro". Se fosse par, antes de pular para L2 eu printei o valor, como solicitado
+pela questão, e depois pulei para L2 da mesma maneira. No fim de L2, o código volta para L1 para conferir a condição do for,
+e se ela não for satisfeita, o código pula para o label FIM, de finalização do código.
+
+4)troquei "movl (%r12), %eax" por "movsbl (%r12), %eax", para antes de mover o conteúdo de %r12, estender com sinal o número de bits de 8 para 32. Também troquei $4 por $1 no addq de %r12, já que agora r12 pode ser entendido como um ponteiro para char (1 byte) e não um ponteiro para int (4 bytes).
