@@ -1,1 +1,32 @@
+jedean jehayem 1813196 
+
+1) Nessa funcao em assembly foi apenas preciso adicionar :
+movq $s1, %rdi
+call system
+
+para que fosse chamado o system com o endereço de s1 em rdi
+
+2) Nesse assembly teve que fazer mais coisas como:
+primeiro iniciamos os registradores 
+
+movl $0, %ebx   /* ebx=0 */
+movq $nums, %r12  /* r12 = nums */
+
+depois comecamos o FOR em l1
+
+cmpl $5,%ebx         comparador com 5
+jge FIM
+movl (%r12),%edi     registramos o valor de r12 em edi
+movl $1, %esi        o valor de 1 em esi
+call filtro
+
+movl %s1,%rdi        passamos os parametros de print s1 em rdi
+movl %eax,%esi       e agora o resultado de filtro
+movl $0,%eax          
+call printf
+
+
+addq $4,%r12
+incl %ebx
+
 
