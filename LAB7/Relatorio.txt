@@ -1,1 +1,20 @@
+jedean jehayem 1813196
 
+1) Primeiro foram iniciado a .data com os dado de char S2[], dps as denominações de printf do programa. Iniciamos ele movendo o endereco de S2 para r12 (movq $S2,%r12) assim como feito em c. Daí iniciamos o while em l1 com o cmpb (pois como estamos lidando com char de apenas 1 byte) $0,%r12
+e saímos do for se conseguirmos sair da condicional (*pc). Comeca movendo (%r12) para %eax para que possa printar e depois do print so incrementa o valor de r12 para rodar o for até atingir sua condição de fim.
+
+2) so precisei colocar as seguintes linhas:
+cmpl $123, %eax
+je tira_caracter
+cmpl $125, %eax
+je tira_caracter
+tira_caracter: /*após o comando de print
+
+3) Pegue o programa base usado ate agora e comecei ele com movl $1, %ebx, depois comecei o for como antes (cmpl $11,%ebx). Movi %ebx para %ecx (movl %ebx,%ecx), usei o imull %ecx,%ecx e depois movl %ecx, %eax.
+
+4)  Traduzindo o programa em assembly, inicializei ebx ("i") e ecx ("soma") em 0, e tambem r12 para servir de ponteiro
+para o array de inteiros. Em seguida, no label L1 ebx é comparado a 4. Se for igual, o código pula para L2, onde eax
+recebe ecx (valor da soma), é impresso e depois o código é finalizado. Caso contrário, inicializei um r13 auxiliar (que
+servirá de end(a[i])), inicializei edx com o valor 4, multipliquei edx pelo valor de ebx, estendi edx para 64 bits e 
+somei seu valor com o r13, que agora é o novo endereço atualizado na posição certa. Somei ecx ao conteúdo armazenado
+por r13 (soma += vet[i]), somei 1 a ebx (i++) e retornei para L1 (início do for).
